@@ -4,9 +4,13 @@
   </head>
   <body>
     <h1>{{ .title }}</h1>
-    <h3>{{ .message }}</h3>
     <form action="/" method="post">
-      <input type="text" name="message"></input>
+      <input type="text" name="text"></input>
     </form>
+    <ul>
+      {{ range $index, $task := .tasks }}
+        <li>{{ $index }}: {{ $task.Text }} </li>
+      {{ end }}
+    </ul>
   </body>
 </html>
